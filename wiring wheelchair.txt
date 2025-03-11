@@ -1,0 +1,30 @@
+1. MPU6050 to ESP8266 (NodeMCU):
+The MPU6050 communicates via I2C, so we’ll connect the I2C pins on both the MPU6050 and the NodeMCU.
+
+MPU6050 Pin	ESP8266 (NodeMCU) Pin
+VCC	3V3
+GND	GND
+SDA	D2 (GPIO4)
+SCL	D1 (GPIO5)
+Note: The ESP8266 uses the I2C protocol, and typically D1 (GPIO5) is used for the SCL (clock) line, while D2 (GPIO4) is used for SDA (data) line. Make sure the wiring is correct.
+
+2. Motor Driver to ESP8266 (NodeMCU):
+This assumes you're using an H-bridge motor driver like L298N or similar to control two motors. You will need four GPIO pins for controlling the motors, as indicated in the code:
+
+Motor Driver Pin	ESP8266 (NodeMCU) Pin
+IN1	D5 (GPIO14)
+IN2	D6 (GPIO12)
+IN3	D7 (GPIO13)
+IN4	D8 (GPIO15)
+Motor 1: IN1 (D5), IN2 (D6)
+Motor 2: IN3 (D7), IN4 (D8)
+3. Power Supply:12v
+
+
+
+
+
+
+max30102
+ esp to max
+   3.7 to vcc , gnd to gnd , scl to d1 , sda to d2
